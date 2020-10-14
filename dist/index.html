@@ -25,21 +25,57 @@
   <body class="d-flex justify-content-center align-items-center">
     <div class="game-window shadow-lg">
       <div class="container-fluid">
-        <div class="row no-gutter">
-          <div class="col-sm-12 col-md-12 col-lg-6">
+        <div class="row no-gutter position-relative">
+          <div
+            class="col-sm-12 col-md-12 col-lg-6 d-flex align-items-center justify-content-center player-wrapper player-wrapper-0 active"
+          >
             <div class="player-0-panel text-center">
-              <div class="player-name" id="name-0">Player 1</div>
-              <div class="player-score" id="score-0">43</div>
+              <div class="player-box">
+                <div class="player-name" id="name-0">Player 1</div>
+                <div class="player-score" id="score-0">43</div>
+              </div>
               <div class="player-current-box">
                 <div class="player-current-label">Current</div>
                 <div class="player-current-score" id="current-0">11</div>
               </div>
+            </div>
+            <div class="new-game text-center">
+              <i class="fas fa-plus-circle"></i>New game
+              <input
+                type="text"
+                class=".score-input"
+                placeholder="Wining score!"
+              />
+            </div>
+          </div>
+          <div
+            class="col-sm-12 col-md-12 col-lg-6 d-flex align-items-center justify-content-center player-wrapper player-wrapper-1"
+          >
+            <div class="player-1-panel text-center">
+              <div class="player-box">
+                <div class="player-name" id="name-1">Player 2</div>
+                <div class="player-score" id="score-1">80</div>
+              </div>
+              <div class="player-current-box">
+                <div class="player-current-label">Current</div>
+                <div class="player-current-score" id="current-1">32</div>
+              </div>
+            </div>
+          </div>
+          <div class="dice-box text-center">
+            <img src="./css/img/dice-5.png" alt="" class="img-fluid mb-2" />
+            <div class="btn-roll my-3">
+              <i class="fas fa-redo"></i>Roll dice
+            </div>
+            <div class="btn-hold">
+              <i class="fas fa-angle-double-down"></i>Hold
             </div>
           </div>
         </div>
       </div>
     </div>
     <!-- JavaScript File -->
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
     <script src="./js/main.js?cb=1602669162592"></script>
   </body>
 </html>

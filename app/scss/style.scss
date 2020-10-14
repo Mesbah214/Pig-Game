@@ -1,6 +1,8 @@
 @import "variables";
+@import "mixin";
 @import "colors";
 @import "global";
 @import "typography";
 @import "./layout/game-window";
+@import "./components/player-panel";
 
