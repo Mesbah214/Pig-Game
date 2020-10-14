@@ -8,7 +8,7 @@
   width: 1rem;
   height: 1rem;
   border-radius: 6rem;
-  top: 12.1rem;
+  top: 11.5rem;
   right: 9rem;
   z-index: 1;
   background-color: $color-primary;
@@ -16,16 +16,7 @@
 }
 
 .player-wrapper {
-  &-0 {
-    height: 48vh;
-    padding-top: 3.2rem;
-  }
-
-
-  &-1 {
-    height: 48vh;
-    padding-top: 6.8rem;
-  }
+  padding: 10rem 0 5rem;
 
   @include respond(lg) {
     padding: 5rem 0 8rem;
@@ -100,7 +91,7 @@
 
 
 .new-game {
-  padding: 1rem 0;
+  padding: 2rem 0;
   position: absolute;
   top: 0;
   left: 50%;
@@ -134,6 +125,7 @@ input {
   border: 1px solid black;
   border-radius: 4px;
   display: block;
+  margin: 1rem auto;
 
 }
 
