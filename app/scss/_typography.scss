@@ -7,4 +7,12 @@ body {
     font-weight: 300;
     line-height: 1.7;
     color: $color-dark-grey;
+    height: 100vh;
+
+    background-image: url(./img/back.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+
 }
