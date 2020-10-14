@@ -3,23 +3,38 @@
   position: relative;
 }
 
-.active::after {
+.player-name::after {
   content: '';
   width: 1rem;
   height: 1rem;
   border-radius: 6rem;
-  top: 11.5rem;
-  right: 9rem;
+  top: 1.5rem !important;
+  right: -3rem;
   z-index: 1;
   background-color: $color-primary;
   position: absolute;
+  display: none;
+
+  @include respond(lg) {
+    top: 2.8rem !important;
+  }
+}
+
+.active .player-name::after {
+  display: block;
 }
 
 .player-wrapper {
   padding: 10rem 0 5rem;
 
+  @include respond(md) {
+    padding: 5rem 0 8rem;
+    height: 80vh;
+  }
+
   @include respond(lg) {
     padding: 5rem 0 8rem;
+    height: 90vh;
   }
 
 }
@@ -38,6 +53,7 @@
 
 .player-name {
   font-size: 2.3rem;
+  position: relative;
   text-transform: uppercase;
   @include respond(lg) {
     font-size: 4rem;
@@ -76,6 +92,7 @@
 
 .player-current-score {
   font-size: 1.4rem;
+
   @include respond(lg) {
     font-size: 3rem;
   }
@@ -86,7 +103,18 @@
 .btn-hold{
   text-transform: uppercase;
   font-size: 1.4rem;
+  cursor: pointer;
 
+  @include respond(lg) {
+    font-size: 2.5rem;
+  }
+
+}
+
+.btn-roll {
+  @include respond(lg) {
+    margin-top: 5rem !important;
+  }
 }
 
 
@@ -96,6 +124,7 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 1;
 }
 
 .dice-box {
@@ -109,6 +138,18 @@
     max-width: 20%;
     display: block;
     margin: 0 auto;
+    
+    @include respond(sm) {
+      max-width: 14%;
+    }
+
+    @include respond(md) {
+      max-width: 11%;
+    }
+
+    @include respond(md) {
+      max-width: 9%;
+    }
   }
 }
 
