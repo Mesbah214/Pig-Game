@@ -1,5 +1,5 @@
 // Global variables.
-var scores, roundScore, activePlayer, gamePlaying;
+var scores, roundScore, activePlayer, gamePlaying, lastRoll;
 
 init();
 
@@ -14,7 +14,15 @@ document.querySelector(".btn-roll").addEventListener("click", function () {
     diceDOM.src = "./css/img/dice-" + dice + ".png";
 
     // Update the roundScore only IF the rolled number isn't 1.
-    if (dice !== 1) {
+
+    if (lastRoll + dice === 12) {
+      // Make the global score 0.
+      scores[activePlayer] = 0;
+      document.querySelector("#score-" + activePlayer).textContent = 0;
+
+      // Next player
+      nextPlayer();
+    } else if (dice !== 1) {
       // Add score.
       roundScore += dice;
       document.querySelector(
@@ -25,6 +33,7 @@ document.querySelector(".btn-roll").addEventListener("click", function () {
       nextPlayer();
     }
   }
+  lastRoll = dice;
 });
 
 document.querySelector(".btn-hold").addEventListener("click", function () {
@@ -36,8 +45,18 @@ document.querySelector(".btn-hold").addEventListener("click", function () {
     document.querySelector("#score-" + activePlayer).textContent =
       scores[activePlayer];
 
+    var input = document.querySelector(".score-input").value;
+    var winningScore;
+
+    // Undefined, 0, null or "" are coerced to false
+    if (input) {
+      winningScore = input;
+    } else {
+      winningScore = 100;
+    }
+
     // Check if the player has own the game.
-    if (scores[activePlayer] >= 20) {
+    if (scores[activePlayer] >= winningScore) {
       document.querySelector("#name-" + activePlayer).textContent = "Winner!";
 
       // Hide the dice again.
